@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #4f46e5; /* Indigo */
+  --secondary-color: #9333ea; /* Purple */
+  --accent-color: #fbbf24; /* Yellow */
+  --bg-color: #f9fafb; /* Light gray */
+  --text-color: #1f2937; /* Dark gray */
+  --text-secondary: #6b7280; /* Medium gray */
+  --success-color: #10b981; /* Green */
+  --warning-color: #f59e0b; /* Amber */
+  --danger-color: #ef4444; /* Red */
+}
+
+@layer base {
+  body {
+    @apply bg-[#F9FAFB] text-[#1F2937];
+  }
+}
+
+/* Confetti animation */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  z-index: 999;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out forwards;
+}
+
